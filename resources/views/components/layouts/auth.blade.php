@@ -9,7 +9,7 @@
         <meta content="{{ env('APP_DESC') }}" name="description" />
         <meta content="{{ env('APP_AUTHOR') }}" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
 
 
         <!-- Bootstrap Css -->
