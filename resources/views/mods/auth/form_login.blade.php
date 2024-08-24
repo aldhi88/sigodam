@@ -26,28 +26,29 @@
             <div class="form-group auth-form-group-custom">
                 <i class="ri-user-2-line auti-custom-input-icon"></i>
                 <label for="username">ID Pengguna</label>
-                <input autofocus type="text" class="form-control @error('username') is-invalid @enderror" wire:model="username" placeholder="Ketik ID login anda..">
-                @error('username') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                <input autofocus type="text" class="form-control @error('valid.username') is-invalid @enderror" wire:model="valid.username" placeholder="Ketik ID login anda..">
+                @error('valid.username') <div class="invalid-feedback">{{ $message }}</div> @enderror
             </div>
 
             <div class="form-group auth-form-group-custom" x-data="{ show_pass : false }">
 
                 <i style="cursor: pointer;" :class="show_pass? 'ri-eye-fill auti-custom-input-icon' : 'ri-eye-close-fill auti-custom-input-icon'" @click="show_pass = show_pass ? false : true"></i>
                 <label for="userpassword">Kata Sandi</label>
-                <input :type="show_pass? 'text':'password'" class="form-control @error('password') is-invalid @enderror" wire:model="password" placeholder="Ketik kata sandi anda..">
-                @error('password') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                <input :type="show_pass? 'text':'password'" class="form-control @error('valid.password') is-invalid @enderror" wire:model="valid.password" placeholder="Ketik kata sandi anda..">
+                @error('valid.password') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
             </div>
 
             <div class="form-group auth-form-group-custom">
                 <i class="ri-shield-user-line auti-custom-input-icon"></i>
                 <label for="userpassword">Login Sebagai</label>
-                <select wire:model="auth_role_id" class="form-control">
-                    <option value="1">Pilih anda login sebagai apa..</option>
+                <select wire:model="valid.role_id" class="form-control @error('valid.role_id') is-invalid @enderror">
+                    <option value="">Pilih anda login sebagai apa..</option>
                     @foreach ($roles as $item)
-                        <option value="{{$item->id}}">{{$item->name}}</option>
+                        <option value="{{$item['id']}}">{{$item['name']}}</option>
                     @endforeach
                 </select>
+                @error('valid.role_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
             </div>
 
 

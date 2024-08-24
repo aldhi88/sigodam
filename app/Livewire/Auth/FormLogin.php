@@ -2,22 +2,62 @@
 
 namespace App\Livewire\Auth;
 
+use App\Models\Role;
+use App\Models\User;
+use Auth;
+use Hash;
 use Livewire\Component;
 
 class FormLogin extends Component
 {
     public $roles = [];
-    public $eyeIcon = 'eye-close-fill';
-    public $seePass = 'password';
+    public $valid = [];
 
-    #[Rule('', as:'Login Sebagai')]
-    public $auth_role_id;
+    public function rules()
+    {
+        return [
+            "valid.username" => "required",
+            "valid.password" => "required",
+            "valid.role_id" => "required",
+        ];
+    }
 
-    #[Rule('required|min:4', as:'ID Login')]
-    public $username;
+    protected $validationAttributes = [
+        "valid.username" => "Username",
+        "valid.password" => "Password",
+        "valid.role_id" => "Role",
+    ];
 
-    #[Rule('required|min:5', as:'Kata Sandi')]
-    public $password;
+    public function mount()
+    {
+        $this->roles = Role::all()->toArray();
+    }
+
+    public function login()
+    {
+        $credentials = $this->validate()['valid'];
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->route('anchor');
+        }
+
+        session()->flash('message', 'Data login anda tidak ditemukan');
+
+        // $q = User::query()
+        //     ->where('username', $data['username'])
+        //     ->where('role_id', $data['role_id'])
+        //     ->first();
+
+        // if ($q && Hash::check($data['password'], $q->password)) {
+        //     Auth::loginUsingId($q[0]['id']);
+        //     return redirect()->route('anchor');
+        // } else {
+        //     session()->flash('message', 'Data login anda tidak ditemukan');
+        // }
+
+    }
+
+
 
     public function render()
     {
