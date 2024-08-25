@@ -8,6 +8,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return 'dashboard';
+        $data['page'] = 'home';
+        $data['title'] = "Home";
+        return view('mods.dashboard.index', compact('data'));
     }
 }
