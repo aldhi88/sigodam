@@ -14,7 +14,7 @@ class ModalConfirm extends Component
         return view('components.modal.modal_confirm');
     }
 
-    #[On('modalconfirm-prepare')] 
+    #[On('modalconfirm-prepare')]
     public function prepare($data)
     {
         $this->data = $data;

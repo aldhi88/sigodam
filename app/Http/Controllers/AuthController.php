@@ -9,7 +9,7 @@ class AuthController extends Controller
 {
     public function login()
     {
-        $data['page'] = 'login';
+        $data['page'] = 'form-login';
         $data['title'] = config('app.name');
         return view('mods.auth.index', compact('data'));
     }
@@ -21,11 +21,17 @@ class AuthController extends Controller
         return view('mods.auth.index', compact('data'));
     }
 
-
     public function logout(Request $request)
     {
         $request->session()->flush();
         Auth::logout();
         return redirect()->route('auth.login');
+    }
+
+    public function accountSetting()
+    {
+        $data['page'] = 'account-setting';
+        $data['title'] = 'Pengaturan Akun';
+        return view('mods.auth.index_app', compact('data'));
     }
 }

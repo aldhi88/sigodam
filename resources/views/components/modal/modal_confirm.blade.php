@@ -9,21 +9,21 @@
                     </button>
                 </div>
                 <form method="POST" wire:submit.prevent="modalConfirmProcess">
-    
+
                     <div class="modal-body">
-                        
+
                         Apakah anda yakin {{ isset($data['msg'])?$data['msg']:null }}?
 
                     </div>
-    
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Batalkan</button>
                         <button type="submit" class="btn btn-danger">Yakin & Lanjutkan</button>
                     </div>
-    
+
                 </form>
             </div>
         </div>
     </div>
-    
+
 </div>

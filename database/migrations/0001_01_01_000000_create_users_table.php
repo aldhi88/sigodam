@@ -20,7 +20,7 @@ return new class extends Migration
 
         $data = [
             ['id' => 1, 'name' => 'Administrator'],
-            ['id' => 2, 'name' => 'Operator']
+            ['id' => 2, 'name' => 'Operator Sekolah']
         ];
         Role::insert($data);
 
@@ -31,6 +31,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('nickname');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         $data = [

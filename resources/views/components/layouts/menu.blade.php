@@ -23,8 +23,8 @@
             <span>Operator Sekolah</span>
         </a>
         <ul class="sub-menu" aria-expanded="false">
-            <li><a href="#">Semua Data</a></li>
-            <li><a href="#">Buat Baru</a></li>
+            <li><a href="{{ route('operator.data') }}">Semua Data</a></li>
+            <li><a href="{{ route('operator.create') }}">Buat Baru</a></li>
         </ul>
     </li>
 

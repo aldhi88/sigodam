@@ -66,6 +66,11 @@
     vertical-align: middle !important;
 }
 
+/* Toast */
+.toast-position-custom {
+    top: 80px;
+}
+
 /* =========== Select2 */
 span.select2-results li {
     font-size: 11px !important;

@@ -12,7 +12,7 @@ window.addEventListener('alert', event => {
         debug: false,
         newestOnTop: false,
         progressBar: false,
-        positionClass: "toast-top-right",
+        positionClass: "toast-top-right toast-position-custom",
         preventDuplicates: false,
         onclick: null,
         showDuration: "1000",
