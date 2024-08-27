@@ -11,6 +11,7 @@ use Livewire\Component;
 
 class MainMenu extends Component
 {
+    public $isAdmin = true;
 
     public function render()
     {
@@ -20,7 +21,9 @@ class MainMenu extends Component
     #[On('mainmenu-mount')]
     public function mount()
     {
-
+        if(Auth::user()->role_id == 2){
+            $this->isAdmin = false;
+        }
     }
 
 

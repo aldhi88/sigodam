@@ -23,17 +23,7 @@
 <div class="row">
     <div class="col">
 
-        @livewire('operator.'.$data['page'], ['data'=>$data])
-
-        @if ($data['page']=='operator-data')
-            @livewire('components.modal-confirm')
-            @livewire('operator.operator-delete')
-        @endif
-
-        @if ($data['page']=='operator-reset-password')
-            @livewire('components.modal-confirm')
-        @endif
-
+        @livewire('laporan.'.$data['page'], ['data'=>$data])
 
     </div>
 </div>

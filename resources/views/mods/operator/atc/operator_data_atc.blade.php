@@ -22,10 +22,10 @@
         ajax: '{{ route("operator.data.dt") }}',
         columns: [
             { data: 'action', name: 'action', orderable: false, searchable:false },
-            { data: 'users.username', name: 'users.username', orderable: true, searchable:true },
-            { data: 'users.nickname', name: 'users.nickname', orderable: true, searchable:true },
-            { data: 'jenis_sekolah', name: 'jenis_sekolah', orderable: true, searchable:true },
-            { data: 'nama_sekolah', name: 'nama_sekolah', orderable: true, searchable:true },
+            { data: 'username', name: 'username', orderable: true, searchable:true },
+            { data: 'nickname', name: 'nickname', orderable: true, searchable:true },
+            { data: 'sekolah.jenis_sekolah', name: 'sekolah.jenis_sekolah', orderable: true, searchable:true },
+            { data: 'sekolah.nama_sekolah', name: 'sekolah.nama_sekolah', orderable: true, searchable:true },
             { data: 'created_at_custom', name: 'created_at', orderable: true, searchable:false },
         ],
         initComplete: function(settings){

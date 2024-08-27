@@ -29,12 +29,6 @@ return new class extends Migration
             $table->string('penilik')->nullable();
             $table->string('nss')->nullable();
             $table->string('npsn')->nullable();
-            // $table->json('data_murid')->nullable();
-            // $table->json('data_agama')->nullable();
-            // $table->json('data_absen')->nullable();
-            // $table->json('data_usia')->nullable();
-            // $table->json('data_inventaris')->nullable();
-            // $table->json('data_guru')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

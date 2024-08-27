@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\OperatorController;
+use App\Http\Controllers\SekolahController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -54,7 +56,33 @@ Route::middleware('auth:web')->group(function(){
                 Route::get('/data', 'data')->name('data');
                 Route::get('/data/dt', 'dataDt')->name('data.dt');
                 Route::get('/{operatorId}/reset-password', 'resetPassword')->name('resetPassword');
-                // Route::get('/index/dt', 'dt')->name('index.dt');
+
+            });
+        });
+    });
+
+    Route::prefix('sekolah')->group(function () {
+        Route::name('sekolah.')->group(function () {
+            Route::controller(SekolahController::class)->group(function () {
+
+                Route::get('/data', 'data')->name('data');
+                Route::get('/data/dt', 'dataDt')->name('data.dt');
+                Route::get('/{sekolahId}/edit', 'edit')->name('edit');
+
+
+            });
+        });
+    });
+
+    Route::prefix('laporan')->group(function () {
+        Route::name('laporan.')->group(function () {
+            Route::controller(LaporanController::class)->group(function () {
+
+                Route::get('/create', 'create')->name('create');
+                Route::get('/operator/data', 'operatorData')->name('operator.data');
+                Route::get('/admin/data', 'adminData')->name('admin.data');
+                Route::get('/data/dt', 'dataDt')->name('data.dt');
+
 
             });
         });

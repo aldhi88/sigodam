@@ -6,7 +6,7 @@
                 <div class="card-body">
 
                     <div class="table-responsive mt-2">
-                        <table id="myTable" class="small table table-bordered table-striped" style="width: 100%">
+                        <table id="myTable" class="table table-bordered table-striped" style="width: 100%">
                             <thead>
                             <tr>
                                 <th class="text-center" width="10"></th>

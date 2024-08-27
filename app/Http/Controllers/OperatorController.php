@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sekolah;
+use App\Models\User;
 use Illuminate\Http\Request;
 use DataTables;
 use DB;
@@ -25,13 +25,14 @@ class OperatorController extends Controller
 
     public function dataDt()
     {
-        $data = Sekolah::query()
+        $data = User::query()
             ->select(
-                "sekolah.*",
-                DB::raw("DATE_FORMAT(sekolah.created_at, '%d/%m/%Y') as created_at_custom"),
+                "users.*",
+                DB::raw("DATE_FORMAT(users.created_at, '%d/%m/%Y') as created_at_custom"),
             )
+            ->where('role_id', 2)
             ->with([
-                'users',
+                'sekolah',
             ])
         ;
 
@@ -46,12 +47,12 @@ class OperatorController extends Controller
                 ';
 
                 $return .= '
-                    <a class="dropdown-item" href="'.route('operator.resetPassword',$data->user_id).'"><i class="fas fa-unlock-alt fa-fw"></i> Reset Password</a>
+                    <a class="dropdown-item" href="'.route('operator.resetPassword',$data->id).'"><i class="fas fa-unlock-alt fa-fw"></i> Reset Password</a>
                 ';
 
                 unset($dtJson);
-                $dtJson['msg'] = 'menghapus data Operator '.$data->users->username;
-                $dtJson['attr'] = $data->users->username;
+                $dtJson['msg'] = 'menghapus data Operator '.$data->username;
+                $dtJson['attr'] = $data->username;
                 $dtJson['id'] = $data->id;
                 $dtJson['callback'] = "operatordelete-delete";
                 $dtJson = json_encode($dtJson);
