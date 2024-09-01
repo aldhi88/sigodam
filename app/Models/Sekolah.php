@@ -30,6 +30,23 @@ class Sekolah extends Model
         return $data;
     }
 
+    public static function kelasRomawiList()
+    {
+        $data = ['I','II','III','IV','V','VI'];
+        return $data;
+    }
+
+    public static function jlhKelas($jenis)
+    {
+        $data = [
+            "TK" => 1,
+            "SD" => 6,
+            "SLTP" => 3,
+        ];
+
+        return $data[$jenis];
+    }
+
     public static function statusSekolahList()
     {
         $data = ['NEGERI NON INPRES', 'NEGERI INPRES', 'SWASTA'];
