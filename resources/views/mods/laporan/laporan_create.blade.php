@@ -95,6 +95,7 @@
             </div>
         </div>
     </div>
+    @include('mods.laporan.atc.laporan_create_atc')
 </div>
 
 

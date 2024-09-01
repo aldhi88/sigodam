@@ -29,6 +29,7 @@ class LaporanCreate extends Component
     {
         $this->dispatch('laporan-create-murid-passdata');
         $this->dispatch('laporan-create-agama-passdata');
+        $this->dispatch('laporan-create-usia-passdata');
     }
 
     public function mount()

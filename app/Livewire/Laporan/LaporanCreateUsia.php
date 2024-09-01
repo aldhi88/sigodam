@@ -3,6 +3,7 @@
 namespace App\Livewire\Laporan;
 
 use App\Models\Sekolah;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class LaporanCreateUsia extends Component
@@ -25,7 +26,7 @@ class LaporanCreateUsia extends Component
                     if($field=='kelas'){
                         $this->form['data_usia']['data'][$field][$i - 1] = ['jlh' => 0];
                     }else{
-                        $this->form['data_usia']['data'][$field][$i - 1] = ['l' => 1, 'p' => 0];
+                        $this->form['data_usia']['data'][$field][$i - 1] = ['l' => 0, 'p' => 0];
                     }
                 }
             }
@@ -59,16 +60,25 @@ class LaporanCreateUsia extends Component
 
         $result = ['jumlah' => $total->toArray()];
         $this->form['data_usia']['total'] = $result;
+        // dump($this->form);
     }
 
     #[On('laporan-create-usia-passdata')]
     public function passData()
     {
+        // dd($this->form);
         $this->dispatch('laporan-create-getdata', form: $this->form);
     }
 
     public function updated($name, $value)
     {
+        $value = $value==""?0:$value;
+        $parts = explode(".", $name);
+        $keyName = $parts[3];
+        $index = $parts[4];
+        $keyGender = $parts[5];
+        $this->form['data_usia']['data'][$keyName][$index][$keyGender] = $value;
+
         $this->reCountDataUsia();
     }
 

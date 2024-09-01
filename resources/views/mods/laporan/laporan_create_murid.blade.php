@@ -229,6 +229,6 @@
             </div>
         </div>
     </div>
-    @include('mods.laporan.atc.laporan_create_murid_atc')
+    {{-- @include('mods.laporan.atc.laporan_create_murid_atc') --}}
 
 </div>

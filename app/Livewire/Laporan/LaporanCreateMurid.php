@@ -79,6 +79,13 @@ class LaporanCreateMurid extends Component
 
     public function updated($name, $value)
     {
+        $value = $value==""?0:$value;
+        $parts = explode(".", $name);
+        $keyName = $parts[3];
+        $index = $parts[4];
+        $keyGender = $parts[5];
+        $this->form['data_usia']['data'][$keyName][$index][$keyGender] = $value;
+
         $this->reCountDataMurid();
     }
 
