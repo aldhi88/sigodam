@@ -77,7 +77,7 @@ class LaporanCreateAgama extends Component
         $keyName = $parts[3];
         $index = $parts[4];
         $keyGender = $parts[5];
-        $this->form['data_usia']['data'][$keyName][$index][$keyGender] = $value;
+        $this->form['data_agama']['data'][$keyName][$index][$keyGender] = $value;
 
         $this->reCountDataAgama();
     }

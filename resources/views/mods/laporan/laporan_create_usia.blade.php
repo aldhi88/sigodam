@@ -28,36 +28,36 @@
                             <tr>
                                 <th>{{$dt['angkaRomawi'][$i]}}</th>
                                 <td>
-                                    <input type="text" style="width:100%" class="text-center only-number"
+                                    <input type="text" style="width:100%; min-width:40px" class="text-center only-number"
                                         wire:model.live="form.data_usia.data.kecil_7.{{$i}}.l">
 
                                 </td>
                                 <td>
-                                    <input type="text" style="width:100%" class="text-center only-number"
+                                    <input type="text" style="width:100%; min-width:40px" class="text-center only-number"
                                         wire:model.live="form.data_usia.data.kecil_7.{{$i}}.p">
                                 </td>
                                 <td>
-                                    <input type="text" style="width:100%" class="text-center only-number"
+                                    <input type="text" style="width:100%; min-width:40px" class="text-center only-number"
                                         wire:model.live="form.data_usia.data.7_12.{{$i}}.l">
                                 </td>
                                 <td>
-                                    <input type="text" style="width:100%" class="text-center only-number"
+                                    <input type="text" style="width:100%; min-width:40px" class="text-center only-number"
                                         wire:model.live="form.data_usia.data.7_12.{{$i}}.p">
                                 </td>
                                 <td>
-                                    <input type="text" style="width:100%" class="text-center only-number"
+                                    <input type="text" style="width:100%; min-width:40px" class="text-center only-number"
                                         wire:model.live="form.data_usia.data.13_15.{{$i}}.l">
                                 </td>
                                 <td>
-                                    <input type="text" style="width:100%" class="text-center only-number"
+                                    <input type="text" style="width:100%; min-width:40px" class="text-center only-number"
                                         wire:model.live="form.data_usia.data.13_15.{{$i}}.p">
                                 </td>
                                 <td>
-                                    <input type="text" style="width:100%" class="text-center only-number"
+                                    <input type="text" style="width:100%; min-width:40px" class="text-center only-number"
                                         wire:model.live="form.data_usia.data.besar_16.{{$i}}.l">
                                 </td>
                                 <td>
-                                    <input type="text" style="width:100%" class="text-center only-number"
+                                    <input type="text" style="width:100%; min-width:40px" class="text-center only-number"
                                         wire:model.live="form.data_usia.data.besar_16.{{$i}}.p">
                                 </td>
 
