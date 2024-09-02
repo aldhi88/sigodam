@@ -80,11 +80,11 @@
                                 <div class="col-sm-6">
                                     <script>
                                         document.write(new Date().getFullYear())
-                                    </script> © Telkom Akses Medan.
+                                    </script> © SIGODAM.
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="text-sm-right d-none d-sm-block">
-                                        Build by Inovation Team
+                                        Build by Developer Team
                                     </div>
                                 </div>
                             </div>

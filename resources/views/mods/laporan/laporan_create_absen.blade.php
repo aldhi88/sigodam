@@ -2,7 +2,7 @@
     <div class="row mt-2">
         <div class="col">
             <div class="alert alert-info mb-0 text-center" role="alert">
-                <h5>Jumlah Hari Sekolah</h5>
+                <h5>Jumlah <br> Hari Sekolah</h5>
                 <span style="font-size: 18px">{{ $dt['hari'] }} hari</span>
             </div>
         </div>
@@ -26,7 +26,7 @@
         </div>
         <div class="col">
             <div class="alert alert-info mb-0 text-center" role="alert">
-                <h5>Jumlah Hari Absen</h5>
+                <h5>Jumlah <br> Hari Absen</h5>
                 <span style="font-size: 18px">{{ $form['data_absen']['total'] }} hari</span>
             </div>
         </div>
