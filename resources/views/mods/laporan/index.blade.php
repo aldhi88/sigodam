@@ -29,6 +29,16 @@
             @livewire('components.modal-confirm')
             @livewire('laporan.laporan-delete')
         @endif
+        @if ($data['page']=='laporan-data-admin-pengajuan')
+            @livewire('components.modal-confirm')
+            @livewire('laporan.laporan-setujui')
+            @livewire('laporan.laporan-tolak')
+        @endif
+        @if ($data['page']=='laporan-detail')
+            @livewire('components.modal-confirm')
+            @livewire('laporan.laporan-setujui')
+            @livewire('laporan.laporan-tolak')
+        @endif
 
     </div>
 </div>

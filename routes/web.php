@@ -86,6 +86,7 @@ Route::middleware('auth:web')->group(function(){
                 Route::get('/data/admin/pengajuan', 'dataAdminPengajuan')->name('data.admin.pengajuan');
                 Route::get('/data/admin/pengajuan/dt', 'dataAdminPengajuanDt')->name('data.admin.pengajuan.dt');
                 Route::get('/data/admin/disetujui', 'dataAdminDisetujui')->name('data.admin.disetujui');
+                Route::get('/data/admin/disetujui/dt', 'dataAdminDisetujuiDt')->name('data.admin.disetujui.dt');
 
                 Route::get('/{laporanId}/detail', 'detail')->name('detail');
 

@@ -39,11 +39,13 @@
             <ul class="sub-menu" aria-expanded="false">
                 <li>
                     <a href="{{ route('laporan.data.admin.pengajuan') }}">
-                        Pengajuan Baru
-                        <span class="badge badge-pill badge-danger float-right py-1">{{ isset($notif['pengajuan']) ? $notif['pengajuan'] : null }}</span>
+                        Pengajuan Masuk
+                        @if ($notif['pengajuan'] != 0)
+                        <span class="badge badge-pill badge-danger float-right py-1">{{ $notif['pengajuan'] }}</span>
+                        @endif
                     </a>
                 </li>
-                <li><a href="{{ route('laporan.create') }}">Laporan Disetujui</a></li>
+                <li><a href="{{ route('laporan.data.admin.disetujui') }}">Laporan Disetujui</a></li>
             </ul>
         </li>
 

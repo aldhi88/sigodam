@@ -15,14 +15,14 @@
 
     var dtTable = $('#myTable').DataTable({
         processing: true,serverSide: true,pageLength: 25,sDom: 'lrtip',
-        order: [[5, 'desc']],
+        order: [[0, 'asc']],
         columnDefs: [
             { className: 'text-center', targets: ['_all'] },
             { className: 'bg-red', targets: ['_all'] },
         ],
         ajax: '{{ route("sekolah.data.dt") }}',
         columns: [
-            { data: 'action', name: 'action', orderable: false, searchable:false },
+            { data: 'action', name: 'created_at', orderable: false, searchable:false },
             { data: 'nama_sekolah', name: 'nama_sekolah', orderable: true, searchable:true },
             { data: 'jenis_sekolah', name: 'jenis_sekolah', orderable: true, searchable:true },
             { data: 'status_sekolah', name: 'status_sekolah', orderable: true, searchable:true },

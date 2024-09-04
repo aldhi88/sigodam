@@ -1,6 +1,52 @@
 <div>
     <div class="row">
         <div class="col">
+            <a href="{{ url()->previous() }}" class="btn btn-warning"><i class="fas fa-angle-double-left"></i> Kembali</a>
+        </div>
+
+        <div class="col text-right">
+            @if ($form['status']==1)
+                <button class="btn btn-{{$dt['status_class']}}" disabled>{{$dt['status_label']}}</button>
+            @else
+
+            <div class="btn-group">
+                <button class="btn btn-{{$dt['status_class']}} dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{$dt['status_label']}}
+                    <i class="mdi mdi-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" style="">
+                    @php
+                    unset($dtJson);
+                    $dtJson['msg'] = 'menyetujui laporan '.$form['bln_laporan'].' '.$form['thn_laporan'].' dari '.$form['sekolah']['nama_sekolah'];
+                    $dtJson['attr'] = $form['sekolah']['nama_sekolah'];
+                    $dtJson['id'] = $form['id'];
+                    $dtJson['callback'] = "laporansetujui-setujui";
+                    $dtJson['is_from_detail'] = true;
+                    $dtJson = json_encode($dtJson);
+                    @endphp
+                    <a class="dropdown-item text-success" data-json="{{$dtJson}}" data-emit="modalconfirm-prepare" data-toggle="modal" data-target="#modalConfirm" href="javascript:void(0);">
+                        <i class="fas fa-check-circle fa-fw"></i> Setujui
+                    </a>
+                    @php
+                    unset($dtJson);
+                    $dtJson['msg'] = 'menolak laporan '.$form['bln_laporan'].' '.$form['thn_laporan'].' dari '.$form['sekolah']['nama_sekolah'];
+                    $dtJson['attr'] = $form['sekolah']['nama_sekolah'];
+                    $dtJson['id'] = $form['id'];
+                    $dtJson['callback'] = "laporantolak-tolak";
+                    $dtJson['is_from_detail'] = true;
+                    $dtJson = json_encode($dtJson);
+                    @endphp
+                    <a class="dropdown-item text-danger" data-json="{{$dtJson}}" data-emit="modalconfirm-prepare" data-toggle="modal" data-target="#modalConfirm" href="javascript:void(0);">
+                        <i class="fas fa-times-circle fa-fw"></i> Tolak
+                    </a>
+                </div>
+            </div>
+
+            @endif
+        </div>
+    </div><hr>
+    <div class="row">
+        <div class="col">
 
             <div class="card">
                 <div class="card-body">
@@ -43,7 +89,7 @@
                                     <tr>
                                         <th>Untuk Bulan</th>
                                         <th>:</th>
-                                        <td>{{$dt['laporan']['tgl_laporan_indonesia']}}</td>
+                                        <td>{{$form['bln_laporan']}} {{$form['thn_laporan']}}</td>
                                     </tr>
 
                                 </table>
