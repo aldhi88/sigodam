@@ -1,8 +1,8 @@
 <div>
     <div class="text-center">
-{{--        <div>--}}
-{{--            <a href="javascript:void(0)" class="logo"><img src="{{ asset('assets/images/sigodam.png') }}" height="60" alt="logo"></a>--}}
-{{--        </div>--}}
+       <div>
+           <a href="javascript:void(0)" class="logo"><img src="{{ asset('assets/images/sigodam.png') }}" height="150" alt="logo"></a>
+       </div>
 
         <h4 class="font-size-18 mt-0 mb-0">Selamat Datang</h4>
         <p class="text-muted">Silahkan login ke aplikasi SIGODAM</p>

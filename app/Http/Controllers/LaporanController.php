@@ -50,6 +50,13 @@ class LaporanController extends Controller
         $data['title'] = "Detail Laporan Sekolah";
         return view('mods.laporan.index', compact('data'));
     }
+    public function print($laporanId)
+    {
+        $data['id'] = $laporanId;
+        $data['page'] = 'laporan-print';
+        $data['title'] = "Cetak Laporan";
+        return view('mods.laporan.laporan_print', compact('data'));
+    }
 
 
     public function dataOperatorDt()
@@ -105,6 +112,12 @@ class LaporanController extends Controller
                 if($data->status != 1){
                     $return .= '
                         <a class="dropdown-item" href="'.route('laporan.edit',$data->id).'"><i class="far fa-edit fa-fw"></i> Edit</a>
+                    ';
+                }
+
+                if($data->status == 1){
+                    $return .= '
+                        <a class="dropdown-item" href="'.route('laporan.print',$data->id).'"><i class="fas fa-print fa-fw"></i> Cetak Laporan</a>
                     ';
                 }
 
@@ -261,6 +274,12 @@ class LaporanController extends Controller
                 $return .= '
                     <a class="dropdown-item" href="'.route('laporan.detail',$data->id).'"><i class="far fa-eye fa-fw"></i> Lihat Detail</a>
                 ';
+
+                if($data->status == 1){
+                    $return .= '
+                        <a class="dropdown-item" href="'.route('laporan.print',$data->id).'"><i class="fas fa-print fa-fw"></i> Cetak Laporan</a>
+                    ';
+                }
 
                 $return .='
                     </div>

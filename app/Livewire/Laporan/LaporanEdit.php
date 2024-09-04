@@ -20,45 +20,48 @@ class LaporanEdit extends Component
     {
         $this->form = array_merge($this->form, $form);
         $this->dtCounter++;
-        if($this->dtCounter===5){
+        if($this->dtCounter===8){
             $this->processData();
         }
     }
 
     public function processData()
     {
-        Laporan::create($this->form);
-        return redirect()->route('laporan.operator.data')->with('status', 'Profile updated!');
+        // dd($this->all());
+        Laporan::find($this->dt['laporan'][0]['id'])->update($this->form);
+        return redirect()->route('laporan.data.operator')->with('status', 'Laporan baru berhasil diperbaharui');
     }
 
     public function submit()
     {
         $this->dispatch('laporan-create-murid-passdata');
         $this->dispatch('laporan-create-agama-passdata');
-        $this->dispatch('laporan-create-usia-passdata');
         $this->dispatch('laporan-create-absen-passdata');
         $this->dispatch('laporan-create-waktu-passdata');
+        $this->dispatch('laporan-create-usia-passdata');
+        $this->dispatch('laporan-create-inventaris-passdata');
+        $this->dispatch('laporan-create-dana-passdata');
+        $this->dispatch('laporan-create-guru-passdata');
     }
 
-    public function mount()
+    public function mount($data)
     {
         $this->dt['sekolah'] = Sekolah::where('user_id', Auth::id())
             ->first()
             ->toArray();
-        $this->dt['laporan'] = Laporan::where('sekolah_id', $this->dt['sekolah']['id'])
-            ->where('status',1)
-            ->orderBy('tgl_laporan', 'desc')
+        $this->dt['laporan'] = Laporan::whereId($data['id'])
             ->get()->toArray();
 
         $this->form = [
             'sekolah_id' => $this->dt['sekolah']['id'],
-            'tgl_laporan' => Carbon::now()->format('Y-m-d'),
+            'tgl_laporan' => $this->dt['laporan'][0]['tgl_laporan'],
             'data_murid' => null,
             'data_agama' => null,
-            'data_usia' => null,
             'data_absen' => null,
             'data_waktu' => null,
+            'data_usia' => null,
             'data_inventaris' => null,
+            'data_dana' => null,
             'data_guru' => null,
             'status' => 0
         ];

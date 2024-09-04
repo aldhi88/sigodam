@@ -45,10 +45,10 @@
 
                                         </div>
 
-                                        <div class="text-center">
+                                        {{-- <div class="text-center">
                                             <a href="javascript:void(0)" class="logo"><img src="{{ asset('assets/images/sigodam.png') }}" height="60" alt="logo"></a>
 
-                                        </div>
+                                        </div> --}}
 
                                     </div>
                                 </div>

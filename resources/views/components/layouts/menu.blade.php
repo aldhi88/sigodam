@@ -6,12 +6,12 @@
 
     @if ($isAdmin)
 
-        <li>
+        {{-- <li>
             <a href="{{ route('dashboard.index') }}" class="waves-effect">
                 <i class="ri-dashboard-line"></i>
                 <span>Dashboard</span>
             </a>
-        </li>
+        </li> --}}
 
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -51,12 +51,12 @@
 
     @else
 
-        <li>
+        {{-- <li>
             <a href="{{ route('dashboard.index') }}" class="waves-effect">
                 <i class="ri-dashboard-line"></i>
                 <span>Dashboard</span>
             </a>
-        </li>
+        </li> --}}
 
         <li>
             <a href="{{ route('sekolah.edit', Auth::user()->sekolah->id) }}" class="waves-effect">

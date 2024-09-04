@@ -8,7 +8,7 @@
                         <div class="col col-md-4">
                             <div class="form-group">
                                 <label>Tanggal Laporan</label>
-                                <input type="date" wire:model.live="form.tgl_laporan" class="form-control @error('form.tgl_laporan') is-invalid @enderror">
+                                <input type="date" wire:model="form.tgl_laporan" class="form-control @error('form.tgl_laporan') is-invalid @enderror">
                                 @error('form.tgl_laporan')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -32,22 +32,23 @@
                                         <span class="d-none d-sm-block">B. Agama</span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#c">
-                                        <span class="d-block d-sm-none">C</span>
-                                        <span class="d-none d-sm-block">C. Usia</span>
-                                    </a>
-                                </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#d">
-                                        <span class="d-block d-sm-none">D</span>
-                                        <span class="d-none d-sm-block">D. Absen</span>
+                                        <span class="d-block d-sm-none">C</span>
+                                        <span class="d-none d-sm-block">C. Absen</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#e">
+                                        <span class="d-block d-sm-none">D</span>
+                                        <span class="d-none d-sm-block">D. Waktu</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#c">
                                         <span class="d-block d-sm-none">E</span>
-                                        <span class="d-none d-sm-block">E. Waktu</span>
+                                        <span class="d-none d-sm-block">E. Usia</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -57,9 +58,16 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#g">
+                                    <a class="nav-link " data-toggle="tab" href="#g">
                                         <span class="d-block d-sm-none">G</span>
-                                        <span class="d-none d-sm-block">G. Guru/Pegawai</span>
+                                        <span class="d-none d-sm-block">G. Dana</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link " data-toggle="tab" href="#h">
+                                        <span class="d-block d-sm-none">H</span>
+                                        <span class="d-none d-sm-block">H. Guru/Pegawai</span>
                                     </a>
                                 </li>
                             </ul>
@@ -70,7 +78,7 @@
                                 <div class="tab-content p-3 text-muted">
 
                                     <div class="tab-pane active" id="a">
-                                        @livewire('laporan.laporan-create-murid', ['dt' => $dt])
+                                        @livewire('laporan.laporan-edit-murid', ['dt' => $dt])
                                     </div>
                                     <div class="tab-pane fade" id="b">
                                         @livewire('laporan.laporan-create-agama', ['dt' => $dt])
@@ -85,10 +93,13 @@
                                         @livewire('laporan.laporan-create-waktu', ['dt' => $dt])
                                     </div>
                                     <div class="tab-pane fade" id="f">
-                                        f
+                                        @livewire('laporan.laporan-create-inventaris', ['dt' => $dt])
                                     </div>
                                     <div class="tab-pane fade" id="g">
-                                        g
+                                        @livewire('laporan.laporan-create-dana', ['dt' => $dt])
+                                    </div>
+                                    <div class="tab-pane fade" id="h">
+                                        @livewire('laporan.laporan-create-guru', ['dt' => $dt])
                                     </div>
 
                                 </div>

@@ -5,6 +5,5 @@
         }).click(function() {
             $(this).select();
         });
-
     </script>
 @endsection
