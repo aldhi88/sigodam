@@ -36,6 +36,16 @@
 
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
+                                    <label>No. Agenda</label>
+                                    <input type="text" wire:model="form.no_agenda" class="form-control @error('form.no_agenda') is-invalid @enderror">
+                                    @error('form.no_agenda')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
                                     <label>Status Sekolah</label>
                                     <select wire:model="form.status_sekolah" class="form-control @error('form.status_sekolah') is-invalid @enderror">
                                         <option value="">= Pilih =</option>

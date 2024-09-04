@@ -79,9 +79,15 @@ Route::middleware('auth:web')->group(function(){
             Route::controller(LaporanController::class)->group(function () {
 
                 Route::get('/create', 'create')->name('create');
-                Route::get('/operator/data', 'operatorData')->name('operator.data');
-                Route::get('/admin/data', 'adminData')->name('admin.data');
-                Route::get('/data/dt', 'dataDt')->name('data.dt');
+                Route::get('/data/operator', 'dataOperator')->name('data.operator');
+                Route::get('/data/operator/dt', 'dataOperatorDt')->name('data.operator.dt');
+                Route::get('/{laporanId}/edit', 'edit')->name('edit');
+
+                Route::get('/data/admin/pengajuan', 'dataAdminPengajuan')->name('data.admin.pengajuan');
+                Route::get('/data/admin/pengajuan/dt', 'dataAdminPengajuanDt')->name('data.admin.pengajuan.dt');
+                Route::get('/data/admin/disetujui', 'dataAdminDisetujui')->name('data.admin.disetujui');
+
+                Route::get('/{laporanId}/detail', 'detail')->name('detail');
 
 
             });

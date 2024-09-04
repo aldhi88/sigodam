@@ -9,7 +9,7 @@ use Carbon\Carbon;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
-class LaporanCreate extends Component
+class LaporanEdit extends Component
 {
     public $dt = [];
     public $form = [];
@@ -28,7 +28,7 @@ class LaporanCreate extends Component
     public function processData()
     {
         Laporan::create($this->form);
-        return redirect()->route('laporan.data.operator')->with('status', 'Laporan baru berhasil dibuat');
+        return redirect()->route('laporan.operator.data')->with('status', 'Profile updated!');
     }
 
     public function submit()
@@ -46,6 +46,7 @@ class LaporanCreate extends Component
             ->first()
             ->toArray();
         $this->dt['laporan'] = Laporan::where('sekolah_id', $this->dt['sekolah']['id'])
+            ->where('status',1)
             ->orderBy('tgl_laporan', 'desc')
             ->get()->toArray();
 
@@ -62,9 +63,8 @@ class LaporanCreate extends Component
             'status' => 0
         ];
     }
-
     public function render()
     {
-        return view('mods.laporan.laporan_create');
+        return view('mods.laporan.laporan_edit');
     }
 }

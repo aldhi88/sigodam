@@ -14,7 +14,7 @@ class LaporanCreateMurid extends Component
     #[On('laporan-create-murid-passdata')]
     public function passData()
     {
-        $this->dispatch('laporan-create-getdata', form: $this->form);
+        $this->dispatch('laporan-create-getdata', form: ['data_murid'=>$this->form['data_murid']]);
     }
 
     public function initDataMurid()

@@ -67,7 +67,7 @@ class LaporanCreateAgama extends Component
     #[On('laporan-create-agama-passdata')]
     public function passData()
     {
-        $this->dispatch('laporan-create-getdata', form: $this->form);
+        $this->dispatch('laporan-create-getdata', form: ['data_agama'=>$this->form['data_agama']]);
     }
 
     public function updated($name, $value)

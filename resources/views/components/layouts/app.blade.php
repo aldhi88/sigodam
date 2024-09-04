@@ -20,17 +20,7 @@
         <link href="{{ asset('assets/mine/style.css') }}" rel="stylesheet" type="text/css" />
         @livewireStyles
 
-        <script>
-            function initSearchCol(table,headerId,inputClass){
-                $(headerId).on('keyup', '.'+inputClass,function () {
-                    table.column( $(this).parent().index() ).search( this.value ).draw(false);
-                });
 
-                $(headerId).on('change', '.'+inputClass,function () {
-                    table.column( $(this).parent().index() ).search( this.value ).draw();
-                });
-            }
-        </script>
 
     </head>
 

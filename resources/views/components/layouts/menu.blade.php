@@ -32,10 +32,19 @@
         </li>
 
         <li>
-            <a href="{{ route('laporan.admin.data') }}" class="waves-effect">
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="ri-file-copy-2-line"></i>
                 <span>Laporan Sekolah</span>
             </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li>
+                    <a href="{{ route('laporan.data.admin.pengajuan') }}">
+                        Pengajuan Baru
+                        <span class="badge badge-pill badge-danger float-right py-1">{{ isset($notif['pengajuan']) ? $notif['pengajuan'] : null }}</span>
+                    </a>
+                </li>
+                <li><a href="{{ route('laporan.create') }}">Laporan Disetujui</a></li>
+            </ul>
         </li>
 
     @else
@@ -60,7 +69,7 @@
                 <span>Laporan Sekolah</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
-                <li><a href="{{ route('laporan.operator.data') }}">Semua Data</a></li>
+                <li><a href="{{ route('laporan.data.operator') }}">Semua Data</a></li>
                 <li><a href="{{ route('laporan.create') }}">Buat Baru</a></li>
             </ul>
         </li>

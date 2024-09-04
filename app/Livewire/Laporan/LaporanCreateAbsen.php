@@ -13,7 +13,7 @@ class LaporanCreateAbsen extends Component
     #[On('laporan-create-absen-passdata')]
     public function passData()
     {
-        $this->dispatch('laporan-create-getdata', form: $this->form);
+        $this->dispatch('laporan-create-getdata', form: ['data_absen'=>$this->form['data_absen']]);
     }
 
     public function initDataAbsen()
@@ -42,11 +42,15 @@ class LaporanCreateAbsen extends Component
     public function updated($name, $value)
     {
         $value = $value==""?0:$value;
+        $value = (int)$value;
         $parts = explode(".", $name);
         $keyName = $parts[3];
         $this->form['data_absen']['data'][$keyName] = $value;
 
         $this->reCountDataAbsen();
+        if($this->form['data_absen']['total']>$this->dt['hari']){
+            $this->form['data_absen']['data'][$keyName] = 0;
+        }
     }
 
     public function mount()

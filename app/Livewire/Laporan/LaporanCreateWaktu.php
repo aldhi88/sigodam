@@ -13,7 +13,7 @@ class LaporanCreateWaktu extends Component
     #[On('laporan-create-waktu-passdata')]
     public function passData()
     {
-        $this->dispatch('laporan-create-getdata', form: $this->form);
+        $this->dispatch('laporan-create-getdata', form: ['data_waktu'=>$this->form['data_waktu']]);
     }
 
     public function initDataWaktu()
@@ -35,7 +35,7 @@ class LaporanCreateWaktu extends Component
 
     public function updated($name, $value)
     {
-
+        // dd($this->form);
     }
 
     public function mount()

@@ -66,8 +66,7 @@ class LaporanCreateUsia extends Component
     #[On('laporan-create-usia-passdata')]
     public function passData()
     {
-        // dd($this->form);
-        $this->dispatch('laporan-create-getdata', form: $this->form);
+        $this->dispatch('laporan-create-getdata', form: [ 'data_usia'=>$this->form['data_usia'] ]);
     }
 
     public function updated($name, $value)

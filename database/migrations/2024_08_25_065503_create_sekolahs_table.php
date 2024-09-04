@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('kecamatan')->nullable();
             $table->string('kanin')->nullable();
             $table->string('penilik')->nullable();
+            $table->string('no_agenda')->nullable();
             $table->string('nss')->nullable();
             $table->string('npsn')->nullable();
             $table->timestamps();

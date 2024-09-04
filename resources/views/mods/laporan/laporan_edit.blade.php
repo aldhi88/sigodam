@@ -8,7 +8,7 @@
                         <div class="col col-md-4">
                             <div class="form-group">
                                 <label>Tanggal Laporan</label>
-                                <input type="date" wire:model="form.tgl_laporan" class="form-control @error('form.tgl_laporan') is-invalid @enderror">
+                                <input type="date" wire:model.live="form.tgl_laporan" class="form-control @error('form.tgl_laporan') is-invalid @enderror">
                                 @error('form.tgl_laporan')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -32,23 +32,22 @@
                                         <span class="d-none d-sm-block">B. Agama</span>
                                     </a>
                                 </li>
-
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#c">
+                                        <span class="d-block d-sm-none">C</span>
+                                        <span class="d-none d-sm-block">C. Usia</span>
+                                    </a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#d">
-                                        <span class="d-block d-sm-none">C</span>
-                                        <span class="d-none d-sm-block">C. Absen</span>
+                                        <span class="d-block d-sm-none">D</span>
+                                        <span class="d-none d-sm-block">D. Absen</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#e">
-                                        <span class="d-block d-sm-none">D</span>
-                                        <span class="d-none d-sm-block">D. Waktu</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#c">
                                         <span class="d-block d-sm-none">E</span>
-                                        <span class="d-none d-sm-block">E. Usia</span>
+                                        <span class="d-none d-sm-block">E. Waktu</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -57,7 +56,6 @@
                                         <span class="d-none d-sm-block">F. Inventaris</span>
                                     </a>
                                 </li>
-
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#g">
                                         <span class="d-block d-sm-none">G</span>

@@ -25,6 +25,11 @@
 
         @livewire('laporan.'.$data['page'], ['data'=>$data])
 
+        @if ($data['page']=='laporan-data-operator')
+            @livewire('components.modal-confirm')
+            @livewire('laporan.laporan-delete')
+        @endif
+
     </div>
 </div>
 
