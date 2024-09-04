@@ -57,11 +57,17 @@
                                         <span class="d-none d-sm-block">F. Inventaris</span>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " data-toggle="tab" href="#g">
+                                        <span class="d-block d-sm-none">G</span>
+                                        <span class="d-none d-sm-block">G. Dana</span>
+                                    </a>
+                                </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#g">
-                                        <span class="d-block d-sm-none">G</span>
-                                        <span class="d-none d-sm-block">G. Guru/Pegawai</span>
+                                    <a class="nav-link " data-toggle="tab" href="#h">
+                                        <span class="d-block d-sm-none">H</span>
+                                        <span class="d-none d-sm-block">H. Guru/Pegawai</span>
                                     </a>
                                 </li>
                             </ul>
@@ -87,10 +93,13 @@
                                         @livewire('laporan.laporan-create-waktu', ['dt' => $dt])
                                     </div>
                                     <div class="tab-pane fade" id="f">
-                                        f
+                                        @livewire('laporan.laporan-create-inventaris', ['dt' => $dt])
                                     </div>
                                     <div class="tab-pane fade" id="g">
-                                        g
+                                        @livewire('laporan.laporan-create-dana', ['dt' => $dt])
+                                    </div>
+                                    <div class="tab-pane fade" id="h">
+                                        @livewire('laporan.laporan-create-guru', ['dt' => $dt])
                                     </div>
 
                                 </div>

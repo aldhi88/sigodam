@@ -21,6 +21,7 @@ return new class extends Migration
             $table->json('data_absen')->nullable();
             $table->json('data_waktu')->nullable();
             $table->json('data_inventaris')->nullable();
+            $table->json('data_dana')->nullable();
             $table->json('data_guru')->nullable();
             $table->unsignedTinyInteger('status');
             $table->timestamps();

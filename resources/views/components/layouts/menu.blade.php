@@ -71,7 +71,14 @@
                 <span>Laporan Sekolah</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
-                <li><a href="{{ route('laporan.data.operator') }}">Semua Data</a></li>
+                <li>
+                    <a href="{{ route('laporan.data.operator') }}">
+                        Semua Data
+                        @if ($notif['tolak'] != 0)
+                        <span class="badge badge-pill badge-danger float-right py-1">{{ $notif['tolak'] }}</span>
+                        @endif
+                    </a>
+                </li>
                 <li><a href="{{ route('laporan.create') }}">Buat Baru</a></li>
             </ul>
         </li>

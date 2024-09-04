@@ -38,6 +38,7 @@ class Laporan extends Model
             'data_absen' => 'array',
             'data_waktu' => 'array',
             'data_inventaris' => 'array',
+            'data_dana' => 'array',
             'data_guru' => 'array',
         ];
     }

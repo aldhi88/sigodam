@@ -20,13 +20,14 @@ class LaporanCreate extends Component
     {
         $this->form = array_merge($this->form, $form);
         $this->dtCounter++;
-        if($this->dtCounter===5){
+        if($this->dtCounter===8){
             $this->processData();
         }
     }
 
     public function processData()
     {
+        // dd($this->all());
         Laporan::create($this->form);
         return redirect()->route('laporan.data.operator')->with('status', 'Laporan baru berhasil dibuat');
     }
@@ -35,9 +36,12 @@ class LaporanCreate extends Component
     {
         $this->dispatch('laporan-create-murid-passdata');
         $this->dispatch('laporan-create-agama-passdata');
-        $this->dispatch('laporan-create-usia-passdata');
         $this->dispatch('laporan-create-absen-passdata');
         $this->dispatch('laporan-create-waktu-passdata');
+        $this->dispatch('laporan-create-usia-passdata');
+        $this->dispatch('laporan-create-inventaris-passdata');
+        $this->dispatch('laporan-create-dana-passdata');
+        $this->dispatch('laporan-create-guru-passdata');
     }
 
     public function mount()
@@ -54,10 +58,11 @@ class LaporanCreate extends Component
             'tgl_laporan' => Carbon::now()->format('Y-m-d'),
             'data_murid' => null,
             'data_agama' => null,
-            'data_usia' => null,
             'data_absen' => null,
             'data_waktu' => null,
+            'data_usia' => null,
             'data_inventaris' => null,
+            'data_dana' => null,
             'data_guru' => null,
             'status' => 0
         ];

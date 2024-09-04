@@ -33,7 +33,7 @@ class MainMenu extends Component
         $this->notif['disetujui'] = collect($dtLaporan)->where('status',1)->count();
 
         if(!$this->isAdmin){
-            $this->notif['tolak'] = collect($dtLaporan)->where('status',1)->where('sekolah_id', Auth::user()->sekolah->id)->count();
+            $this->notif['tolak'] = collect($dtLaporan)->where('status',2)->where('sekolah_id', Auth::user()->sekolah->id)->count();
         }
 
         // dump($this->all());
