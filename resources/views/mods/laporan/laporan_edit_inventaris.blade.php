@@ -563,12 +563,12 @@
                 <td>3.</td>
                 <td colspan="3">Bangku murid (1 orang)</td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii3_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii3_qty">
                 </td>
                 <td>Buah</td>
                 <td></td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii3_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii3_baik">
                 </td>
                 <td>Baik</td>
                 <td></td>
@@ -582,12 +582,12 @@
                 <td>4.</td>
                 <td colspan="3">Meja murid (1 orang)</td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii4_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii4_qty">
                 </td>
                 <td>Buah</td>
                 <td></td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii4_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii4_baik">
                 </td>
                 <td>Baik</td>
                 <td></td>
@@ -601,12 +601,12 @@
                 <td>5.</td>
                 <td colspan="3">Meja Guru</td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii5_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii5_qty">
                 </td>
                 <td>Buah</td>
                 <td></td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii5_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii5_baik">
                 </td>
                 <td>Baik</td>
                 <td></td>
@@ -620,12 +620,12 @@
                 <td>6.</td>
                 <td colspan="3">Kursi guru</td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii6_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii6_qty">
                 </td>
                 <td>Buah</td>
                 <td></td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii6_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii6_baik">
                 </td>
                 <td>Baik</td>
                 <td></td>
@@ -639,12 +639,12 @@
                 <td>7.</td>
                 <td colspan="3">Lemari</td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii7_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii7_qty">
                 </td>
                 <td>Buah</td>
                 <td></td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii7_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii7_baik">
                 </td>
                 <td>Baik</td>
                 <td></td>
@@ -658,12 +658,12 @@
                 <td>8.</td>
                 <td colspan="3">Papan tulis</td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii8_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii8_qty">
                 </td>
                 <td>Buah</td>
                 <td></td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii8_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii8_baik">
                 </td>
                 <td>Baik</td>
                 <td></td>
@@ -677,12 +677,12 @@
                 <td>9.</td>
                 <td colspan="3">Pengeras suara</td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii9_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii9_qty">
                 </td>
                 <td>Buah</td>
                 <td></td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii9_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii9_baik">
                 </td>
                 <td>Baik</td>
                 <td></td>
@@ -696,12 +696,12 @@
                 <td>10.</td>
                 <td colspan="3">Buku paket murid</td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii10_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii10_qty">
                 </td>
                 <td>Buah</td>
                 <td></td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii10_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii10_baik">
                 </td>
                 <td>Baik</td>
                 <td></td>
@@ -715,12 +715,12 @@
                 <td>11.</td>
                 <td colspan="3">Buku pegangan guru</td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii11_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii11_qty">
                 </td>
                 <td>Buah</td>
                 <td></td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii11_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii11_baik">
                 </td>
                 <td>Baik</td>
                 <td></td>
@@ -734,12 +734,12 @@
                 <td>12.</td>
                 <td colspan="3">Buku pustaka</td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii12_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii12_qty">
                 </td>
                 <td>Buah</td>
                 <td></td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii12_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii12_baik">
                 </td>
                 <td>Baik</td>
                 <td></td>
@@ -753,12 +753,12 @@
                 <td>13.</td>
                 <td colspan="3">Alat kesenian</td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii13_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii13_qty">
                 </td>
                 <td>Buah</td>
                 <td></td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii13_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii13_baik">
                 </td>
                 <td>Baik</td>
                 <td></td>
@@ -772,12 +772,12 @@
                 <td>14.</td>
                 <td colspan="3">Alat olah raga</td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii14_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii14_qty">
                 </td>
                 <td>Buah</td>
                 <td></td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii14_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii14_baik">
                 </td>
                 <td>Baik</td>
                 <td></td>
@@ -791,12 +791,12 @@
                 <td>15.</td>
                 <td colspan="3">Alat peraga matematika</td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii15_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii15_qty">
                 </td>
                 <td>Buah</td>
                 <td></td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii15_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii15_baik">
                 </td>
                 <td>Baik</td>
                 <td></td>
@@ -810,12 +810,12 @@
                 <td>16.</td>
                 <td colspan="3">Alat Peraga IPA</td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii16_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii16_qty">
                 </td>
                 <td>Buah</td>
                 <td></td>
                 <td class="text-center">
-                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii16_rusak">
+                    <input type="text" class="text-center only-number" style="width: 30px" wire:model="form.data_inventaris.data.ii16_baik">
                 </td>
                 <td>Baik</td>
                 <td></td>

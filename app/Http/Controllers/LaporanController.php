@@ -52,10 +52,32 @@ class LaporanController extends Controller
     }
     public function print($laporanId)
     {
+        $data['laporan'] = Laporan::whereId($laporanId)
+            ->with([
+                'sekolah'
+            ])
+            ->first()
+            ->toArray();
+
+        $dt['laporan'] = $data['laporan'];
+
+        $dt['jlh_kelas'] = Sekolah::jlhKelas($dt['laporan']['sekolah']['jenis_sekolah']);
+        $dt['angkaRomawi'] = Sekolah::kelasRomawiList();
+        $dt['hari'] = 14;
+        $form = $dt['laporan'];
+        $cekKepala = array_values((collect($dt['laporan']['data_guru']['data']))->where('jabatan','Kepala')->toArray());
+        if(count($cekKepala)>0){
+            $dt['kepala'] = $cekKepala[0]['nama'];
+            $dt['nip'] = $cekKepala[0]['nip'];
+        }else{
+            $dt['kepala'] = "-";
+            $dt['nip'] = "-";
+        }
         $data['id'] = $laporanId;
         $data['page'] = 'laporan-print';
         $data['title'] = "Cetak Laporan";
-        return view('mods.laporan.laporan_print', compact('data'));
+
+        return view('mods.laporan.laporan_print', compact('data','dt','form'));
     }
 
 

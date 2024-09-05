@@ -49,7 +49,7 @@
                     <label>Jabatan</label>
                     <select class="form-control form-control-sm" wire:model="temp.jabatan">
                         <option value="">- Jabatan -</option>
-                        <option value="Kepala SD">Kepala SD</option>
+                        <option value="Kepala">Kepala {{$dt['sekolah']['jenis_sekolah']}}</option>
                         <option value="Guru Kelas">Guru Kelas</option>
                         <option value="Guru Orkes">Guru Orkes</option>
                         <option value="Guru Agama">Guru Agama</option>
@@ -158,7 +158,7 @@
                 </tr>
 
                 <tr>
-                    <th rowspan="2">Kepala SD</th>
+                    <th rowspan="2">Kepala {{$dt['sekolah']['jenis_sekolah']}}</th>
                     <th rowspan="2">Guru Kelas</th>
                     <th rowspan="2">Guru Orkes</th>
                     <th rowspan="2">Guru Agama</th>
@@ -199,7 +199,7 @@
                         <td>{{$item['tgl_lahir']}}</td>
                         <td>{{$item['gender']}}</td>
                         <td>{{$item['ijazah']}}</td>
-                        <td>{!!$item['jabatan']=='Kepala SD'?'&check;':'-'!!}</td>
+                        <td>{!!$item['jabatan']=='Kepala'?'&check;':'-'!!}</td>
                         <td>{!!$item['jabatan']=='Guru Kelas'?'&check;':'-'!!}</td>
                         <td>{!!$item['jabatan']=='Guru Orkes'?'&check;':'-'!!}</td>
                         <td>{!!$item['jabatan']=='Guru Agama'?'&check;':'-'!!}</td>

@@ -12,7 +12,9 @@ use Livewire\Component;
 
 class MainMenu extends Component
 {
-    public $isAdmin = true;
+    public $isAdmin = false;
+    public $isOperator = false;
+    public $isSupervisor = false;
     public $notif = [];
 
     public function render()
@@ -23,8 +25,16 @@ class MainMenu extends Component
     #[On('mainmenu-mount')]
     public function mount()
     {
+        if(Auth::user()->role_id == 1){
+            $this->isAdmin = true;
+        }
+
         if(Auth::user()->role_id == 2){
-            $this->isAdmin = false;
+            $this->isOperator = true;
+        }
+
+        if(Auth::user()->role_id == 3){
+            $this->isSupervisor = true;
         }
 
         $dtLaporan = Laporan::all();
@@ -32,7 +42,7 @@ class MainMenu extends Component
         $this->notif['pengajuan'] = collect($dtLaporan)->where('status',0)->count();
         $this->notif['disetujui'] = collect($dtLaporan)->where('status',1)->count();
 
-        if(!$this->isAdmin){
+        if($this->isOperator){
             $this->notif['tolak'] = collect($dtLaporan)->where('status',2)->where('sekolah_id', Auth::user()->sekolah->id)->count();
         }
 

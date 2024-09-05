@@ -7,17 +7,20 @@ use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\SekolahController;
 use App\Http\Middleware\AdminPermission;
 use App\Http\Middleware\OperatorPermission;
+use App\Http\Middleware\SupervisorPermission;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function(){
     if(Auth::check()){
 
-        if(Auth::user()->role_id==1){
-            return redirect()->route('laporan.data.admin.pengajuan');
-        }else{
-            return redirect()->route('laporan.data.operator');
-        }
+        return redirect()->route('dashboard.index');
+
+        // if(Auth::user()->role_id==1){
+        //     return redirect()->route('laporan.data.admin.pengajuan');
+        // }else{
+        //     return redirect()->route('laporan.data.operator');
+        // }
 
     }
     return redirect()->route('auth.login');
@@ -100,6 +103,11 @@ Route::middleware('auth:web')->group(function(){
                 Route::middleware([AdminPermission::class])->group(function () {
                     Route::get('/data/admin/pengajuan', 'dataAdminPengajuan')->name('data.admin.pengajuan');
                     Route::get('/data/admin/pengajuan/dt', 'dataAdminPengajuanDt')->name('data.admin.pengajuan.dt');
+                    Route::get('/data/admin/disetujui', 'dataAdminDisetujui')->name('data.admin.disetujui');
+                    Route::get('/data/admin/disetujui/dt', 'dataAdminDisetujuiDt')->name('data.admin.disetujui.dt');
+                });
+
+                Route::middleware([SupervisorPermission::class])->group(function () {
                     Route::get('/data/admin/disetujui', 'dataAdminDisetujui')->name('data.admin.disetujui');
                     Route::get('/data/admin/disetujui/dt', 'dataAdminDisetujuiDt')->name('data.admin.disetujui.dt');
                 });

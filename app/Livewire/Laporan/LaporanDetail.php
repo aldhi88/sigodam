@@ -37,6 +37,7 @@ class LaporanDetail extends Component
         $this->form = $this->dt['laporan'];
         $this->dt['status_label'] = Laporan::statusList('label')[$this->form['status']];
         $this->dt['status_class'] = Laporan::statusList('class')[$this->form['status']];
+
         // dd($this->all());
     }
 

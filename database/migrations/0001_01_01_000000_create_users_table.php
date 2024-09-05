@@ -20,7 +20,8 @@ return new class extends Migration
 
         $data = [
             ['id' => 1, 'name' => 'Administrator'],
-            ['id' => 2, 'name' => 'Operator Sekolah']
+            ['id' => 2, 'name' => 'Operator Sekolah'],
+            ['id' => 3, 'name' => 'Supervisor']
         ];
         Role::insert($data);
 
@@ -36,6 +37,7 @@ return new class extends Migration
 
         $data = [
             ['id' => 1, 'role_id' => 1, 'username' => 'admin', 'password' => Hash::make('admin'), 'nickname' => 'Admin'],
+            ['id' => 2, 'role_id' => 3, 'username' => 'supervisor', 'password' => Hash::make('supervisor'), 'nickname' => 'Supervisor'],
         ];
         User::insert($data);
 
