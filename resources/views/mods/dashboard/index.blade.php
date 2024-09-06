@@ -23,9 +23,9 @@
 <div class="row">
     <div class="col">
 
-
-        @if ($data['page']=='index')
-            @livewire('tagihan.detail-status-tagihan')
+        @livewire('dashboard.'.$data['page'], ['data'=>$data])
+        {{-- @if ($data['page']=='index')
+            @livewire('tagihan.detail-status-tagihan') --}}
             {{-- @livewire('dashboard.table-dashboard') --}}
 
         {{-- @elseif ($data['page'] == 'create')
@@ -48,7 +48,7 @@
 
             @livewire('khs.detail-khs',['param' => $data]) --}}
 
-        @endif
+        {{-- @endif --}}
 
     </div>
 </div>
